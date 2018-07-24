@@ -1,0 +1,33 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="householdMember">
+            <h2><span jhiTranslate="swhomeApp.householdMember.detail.title">Household Member</span> {{householdMember.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="swhomeApp.householdMember.name">Name</span></dt>
+                <dd>
+                    <span>{{householdMember.name}}</span>
+                </dd>
+                <dt><span jhiTranslate="swhomeApp.householdMember.household">Household</span></dt>
+                <dd>
+                    <div *ngIf="householdMember.household">
+                        <a [routerLink]="['/household', householdMember.household?.id, 'view']">{{householdMember.household?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/household-member', householdMember.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,22 @@
+
+{
+    "swhomeApp": {
+        "unit" : {
+            "home": {
+                "title": "Units",
+                "createLabel": "Egy új Unit létrehozása",
+                "createOrEditLabel": "Hozzon létre, vagy módosítson Unitt"
+            },
+            "created": "Egy új Unit lett létrehozva {{ param }} azonosítóval",
+            "updated": "A Unit módosítva lett {{ param }} azonosítóval",
+            "deleted": "A Unit törölve lett {{ param }} azonosítóval",
+            "delete": {
+                "question": "Biztos benne, hogy törölni szeretné az Unitt {{ id }} azonosítóval?"
+            },
+            "detail": {
+                "title": "Unit"
+            },
+            "name": "Name"
+        }
+    }
+}

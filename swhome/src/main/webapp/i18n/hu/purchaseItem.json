@@ -1,0 +1,26 @@
+
+{
+    "swhomeApp": {
+        "purchaseItem" : {
+            "home": {
+                "title": "PurchaseItems",
+                "createLabel": "Egy új Purchase Item létrehozása",
+                "createOrEditLabel": "Hozzon létre, vagy módosítson Purchase Itemt"
+            },
+            "created": "Egy új Purchase Item lett létrehozva {{ param }} azonosítóval",
+            "updated": "A Purchase Item módosítva lett {{ param }} azonosítóval",
+            "deleted": "A Purchase Item törölve lett {{ param }} azonosítóval",
+            "delete": {
+                "question": "Biztos benne, hogy törölni szeretné az Purchase Itemt {{ id }} azonosítóval?"
+            },
+            "detail": {
+                "title": "Purchase Item"
+            },
+            "amount": "Amount",
+            "totalPrice": "Total Price",
+            "purchase": "Purchase",
+            "unit": "Unit",
+            "type": "Type"
+        }
+    }
+}

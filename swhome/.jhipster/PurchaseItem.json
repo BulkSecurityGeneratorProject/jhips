@@ -1,0 +1,42 @@
+{
+    "name": "PurchaseItem",
+    "fields": [
+        {
+            "fieldName": "amount",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "totalPrice",
+            "fieldType": "Long"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "purchase",
+            "otherEntityName": "purchase",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "unit",
+            "otherEntityName": "unit",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "type",
+            "otherEntityName": "purchaseItemType",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20180710173415",
+    "entityTableName": "purchase_item",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

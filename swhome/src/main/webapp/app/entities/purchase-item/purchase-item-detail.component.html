@@ -1,0 +1,49 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="purchaseItem">
+            <h2><span jhiTranslate="swhomeApp.purchaseItem.detail.title">Purchase Item</span> {{purchaseItem.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="swhomeApp.purchaseItem.amount">Amount</span></dt>
+                <dd>
+                    <span>{{purchaseItem.amount}}</span>
+                </dd>
+                <dt><span jhiTranslate="swhomeApp.purchaseItem.totalPrice">Total Price</span></dt>
+                <dd>
+                    <span>{{purchaseItem.totalPrice}}</span>
+                </dd>
+                <dt><span jhiTranslate="swhomeApp.purchaseItem.purchase">Purchase</span></dt>
+                <dd>
+                    <div *ngIf="purchaseItem.purchase">
+                        <a [routerLink]="['/purchase', purchaseItem.purchase?.id, 'view']">{{purchaseItem.purchase?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="swhomeApp.purchaseItem.unit">Unit</span></dt>
+                <dd>
+                    <div *ngIf="purchaseItem.unit">
+                        <a [routerLink]="['/unit', purchaseItem.unit?.id, 'view']">{{purchaseItem.unit?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="swhomeApp.purchaseItem.type">Type</span></dt>
+                <dd>
+                    <div *ngIf="purchaseItem.type">
+                        <a [routerLink]="['/purchase-item-type', purchaseItem.type?.id, 'view']">{{purchaseItem.type?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/purchase-item', purchaseItem.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

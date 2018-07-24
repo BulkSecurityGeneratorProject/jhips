@@ -1,0 +1,50 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-purchase-heading" jhiTranslate="swhomeApp.purchase.home.createOrEditLabel">Create or edit a Purchase</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!purchase.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="purchase.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="swhomeApp.purchase.date" for="field_date">Date</label>
+                    <div class="d-flex">
+                        <input id="field_date" type="datetime-local" class="form-control" name="date" [(ngModel)]="date"
+                        />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="swhomeApp.purchase.householdMember" for="field_householdMember">Household Member</label>
+                    <select class="form-control" id="field_householdMember" name="householdMember" [(ngModel)]="purchase.householdMember" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="householdMemberOption.id === purchase.householdMember?.id ? purchase.householdMember : householdMemberOption" *ngFor="let householdMemberOption of householdmembers; trackBy: trackHouseholdMemberById">{{householdMemberOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="swhomeApp.purchase.market" for="field_market">Market</label>
+                    <select class="form-control" id="field_market" name="market" [(ngModel)]="purchase.market" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="marketOption.id === purchase.market?.id ? purchase.market : marketOption" *ngFor="let marketOption of markets; trackBy: trackMarketById">{{marketOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <jhi-purchase-item></jhi-purchase-item>
+    </div>
+</div>

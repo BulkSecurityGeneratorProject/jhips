@@ -1,0 +1,22 @@
+
+{
+    "swhomeApp": {
+        "market" : {
+            "home": {
+                "title": "Markets",
+                "createLabel": "Egy új Market létrehozása",
+                "createOrEditLabel": "Hozzon létre, vagy módosítson Markett"
+            },
+            "created": "Egy új Market lett létrehozva {{ param }} azonosítóval",
+            "updated": "A Market módosítva lett {{ param }} azonosítóval",
+            "deleted": "A Market törölve lett {{ param }} azonosítóval",
+            "delete": {
+                "question": "Biztos benne, hogy törölni szeretné az Markett {{ id }} azonosítóval?"
+            },
+            "detail": {
+                "title": "Market"
+            },
+            "name": "Name"
+        }
+    }
+}

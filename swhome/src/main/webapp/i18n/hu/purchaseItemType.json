@@ -1,0 +1,23 @@
+
+{
+    "swhomeApp": {
+        "purchaseItemType" : {
+            "home": {
+                "title": "PurchaseItemTypes",
+                "createLabel": "Egy új Purchase Item Type létrehozása",
+                "createOrEditLabel": "Hozzon létre, vagy módosítson Purchase Item Typet"
+            },
+            "created": "Egy új Purchase Item Type lett létrehozva {{ param }} azonosítóval",
+            "updated": "A Purchase Item Type módosítva lett {{ param }} azonosítóval",
+            "deleted": "A Purchase Item Type törölve lett {{ param }} azonosítóval",
+            "delete": {
+                "question": "Biztos benne, hogy törölni szeretné az Purchase Item Typet {{ id }} azonosítóval?"
+            },
+            "detail": {
+                "title": "Purchase Item Type"
+            },
+            "name": "Name",
+            "parent": "Parent"
+        }
+    }
+}

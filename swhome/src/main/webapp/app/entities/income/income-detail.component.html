@@ -1,0 +1,37 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="income">
+            <h2><span jhiTranslate="swhomeApp.income.detail.title">Income</span> {{income.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="swhomeApp.income.name">Name</span></dt>
+                <dd>
+                    <span>{{income.name}}</span>
+                </dd>
+                <dt><span jhiTranslate="swhomeApp.income.amount">Amount</span></dt>
+                <dd>
+                    <span>{{income.amount}}</span>
+                </dd>
+                <dt><span jhiTranslate="swhomeApp.income.householdMember">Household Member</span></dt>
+                <dd>
+                    <div *ngIf="income.householdMember">
+                        <a [routerLink]="['/household-member', income.householdMember?.id, 'view']">{{income.householdMember?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/income', income.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

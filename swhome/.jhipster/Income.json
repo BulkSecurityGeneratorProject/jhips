@@ -1,0 +1,30 @@
+{
+    "name": "Income",
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "amount",
+            "fieldType": "Long"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "householdMember",
+            "otherEntityName": "householdMember",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20180710173418",
+    "entityTableName": "income",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

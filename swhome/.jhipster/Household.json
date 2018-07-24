@@ -1,0 +1,14 @@
+{
+    "name": "Household",
+    "fields": [],
+    "relationships": [],
+    "changelogDate": "20180710173413",
+    "entityTableName": "household",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

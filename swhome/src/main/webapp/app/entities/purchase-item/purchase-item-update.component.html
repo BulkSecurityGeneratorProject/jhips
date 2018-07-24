@@ -1,0 +1,55 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-purchase-item-heading" jhiTranslate="swhomeApp.purchaseItem.home.createOrEditLabel">Create or edit a Purchase Item</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!purchaseItem.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="purchaseItem.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="swhomeApp.purchaseItem.amount" for="field_amount">Amount</label>
+                    <input type="number" class="form-control" name="amount" id="field_amount"
+                        [(ngModel)]="purchaseItem.amount" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="swhomeApp.purchaseItem.totalPrice" for="field_totalPrice">Total Price</label>
+                    <input type="number" class="form-control" name="totalPrice" id="field_totalPrice"
+                        [(ngModel)]="purchaseItem.totalPrice" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="swhomeApp.purchaseItem.purchase" for="field_purchase">Purchase</label>
+                    <select class="form-control" id="field_purchase" name="purchase" [(ngModel)]="purchaseItem.purchase" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="purchaseOption.id === purchaseItem.purchase?.id ? purchaseItem.purchase : purchaseOption" *ngFor="let purchaseOption of purchases; trackBy: trackPurchaseById">{{purchaseOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="swhomeApp.purchaseItem.unit" for="field_unit">Unit</label>
+                    <select class="form-control" id="field_unit" name="unit" [(ngModel)]="purchaseItem.unit" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="unitOption.id === purchaseItem.unit?.id ? purchaseItem.unit : unitOption" *ngFor="let unitOption of units; trackBy: trackUnitById">{{unitOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="swhomeApp.purchaseItem.type" for="field_type">Type</label>
+                    <select class="form-control" id="field_type" name="type" [(ngModel)]="purchaseItem.type" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="purchaseItemTypeOption.id === purchaseItem.type?.id ? purchaseItem.type : purchaseItemTypeOption" *ngFor="let purchaseItemTypeOption of purchaseitemtypes; trackBy: trackPurchaseItemTypeById">{{purchaseItemTypeOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

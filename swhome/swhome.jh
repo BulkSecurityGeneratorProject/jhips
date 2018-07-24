@@ -1,0 +1,74 @@
+
+entity HouseholdMember {
+	id Long,
+    name String,
+}
+
+entity Household {
+	id Long
+}
+
+relationship ManyToOne {
+	HouseholdMember{household} to Household
+}
+
+entity Purchase {
+	id Long,
+    date Instant,
+}
+
+entity PurchaseItem {
+	id Long,
+    amount Long,
+    totalPrice Long
+}
+
+relationship ManyToOne {
+	PurchaseItem{purchase} to Purchase
+}
+
+relationship ManyToOne {
+	Purchase{householdMember} to HouseholdMember
+}
+
+entity Unit {
+	id Long,
+    name String
+}
+
+relationship ManyToOne {
+	PurchaseItem{unit} to Unit
+}
+
+entity Market {
+	id Long,
+    name String
+}
+
+relationship ManyToOne {
+	Purchase{market} to Market
+}
+
+entity Income {
+	id Long,
+    name String,
+    amount Long
+}
+
+relationship ManyToOne {
+	Income{householdMember} to HouseholdMember
+}
+
+entity PurchaseItemType {
+	id Long,
+    name String
+}
+
+relationship ManyToOne {
+	PurchaseItemType{parent} to PurchaseItemType
+}
+
+relationship ManyToOne {
+	PurchaseItem{type} to PurchaseItemType
+}
+

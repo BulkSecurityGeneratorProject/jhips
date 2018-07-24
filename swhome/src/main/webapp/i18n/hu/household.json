@@ -1,0 +1,21 @@
+
+{
+    "swhomeApp": {
+        "household" : {
+            "home": {
+                "title": "Households",
+                "createLabel": "Egy új Household létrehozása",
+                "createOrEditLabel": "Hozzon létre, vagy módosítson Householdt"
+            },
+            "created": "Egy új Household lett létrehozva {{ param }} azonosítóval",
+            "updated": "A Household módosítva lett {{ param }} azonosítóval",
+            "deleted": "A Household törölve lett {{ param }} azonosítóval",
+            "delete": {
+                "question": "Biztos benne, hogy törölni szeretné az Householdt {{ id }} azonosítóval?"
+            },
+            "detail": {
+                "title": "Household"
+            }
+        }
+    }
+}

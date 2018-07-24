@@ -1,0 +1,24 @@
+
+{
+    "swhomeApp": {
+        "purchase" : {
+            "home": {
+                "title": "Purchases",
+                "createLabel": "Egy új Purchase létrehozása",
+                "createOrEditLabel": "Hozzon létre, vagy módosítson Purchaset"
+            },
+            "created": "Egy új Purchase lett létrehozva {{ param }} azonosítóval",
+            "updated": "A Purchase módosítva lett {{ param }} azonosítóval",
+            "deleted": "A Purchase törölve lett {{ param }} azonosítóval",
+            "delete": {
+                "question": "Biztos benne, hogy törölni szeretné az Purchaset {{ id }} azonosítóval?"
+            },
+            "detail": {
+                "title": "Purchase"
+            },
+            "date": "Date",
+            "householdMember": "Household Member",
+            "market": "Market"
+        }
+    }
+}

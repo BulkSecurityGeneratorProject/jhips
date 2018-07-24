@@ -1,0 +1,24 @@
+
+{
+    "swhomeApp": {
+        "income" : {
+            "home": {
+                "title": "Incomes",
+                "createLabel": "Egy új Income létrehozása",
+                "createOrEditLabel": "Hozzon létre, vagy módosítson Incomet"
+            },
+            "created": "Egy új Income lett létrehozva {{ param }} azonosítóval",
+            "updated": "A Income módosítva lett {{ param }} azonosítóval",
+            "deleted": "A Income törölve lett {{ param }} azonosítóval",
+            "delete": {
+                "question": "Biztos benne, hogy törölni szeretné az Incomet {{ id }} azonosítóval?"
+            },
+            "detail": {
+                "title": "Income"
+            },
+            "name": "Name",
+            "amount": "Amount",
+            "householdMember": "Household Member"
+        }
+    }
+}
